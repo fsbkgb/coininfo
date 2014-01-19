@@ -28,10 +28,12 @@
         .pure-u-1-2
           .pure-u-1
             %h3 Network difficulty
-            %img{:src => "diff.png", :alt => "difficulty graph"}
+            %a{:href => "diff.png", :target => "_blank"}
+              %img{:src => "diff.png", :alt => "difficulty graph"}
           .pure-u-1
             %h3 Mined coins
-            %img{:src => "mined.png", :alt => "mined coins"}
+            %a{:href => "mined.png", :target => "_blank"}
+              %img{:src => "mined.png", :alt => "mined coins"}
         .pure-u-1-2
           %h3 Latest blocks
           - @@blocks.limit(18).each do |b|
@@ -41,6 +43,7 @@
               #{Time.at(b.time.to_i)}
       .pure-g-r
         .pure-u-1
-          %img{:src => "git.png", :alt => "git repo"}
+          %a{:href => "https://github.com/fsbkgb/coininfo"}
+            %img{:src => "git.png", :alt => "git repo"}
           
     
