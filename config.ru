@@ -1,0 +1,10 @@
+require 'bundler/setup'
+require 'thin'
+require 'haml'
+require 'json'
+require 'mongoid'
+require 'sinatra'
+require 'rchart'
+require 'rufus-scheduler'
+require './coininfo'
+run Sinatra::Application

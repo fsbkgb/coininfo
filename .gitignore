@@ -1,0 +1,6 @@
+.bundle
+*.directory
+2chcoind
+public/diff.png
+public/mined.png
+vendor

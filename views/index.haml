@@ -1,0 +1,46 @@
+!!! 5
+%html{html_attrs}
+  %head
+    %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title #{@@coin} Info
+    %link{:href=>'//yui.yahooapis.com/combo?pure/0.3.0/base-min.css&pure/0.3.0/grids-min.css&pure/0.3.0/buttons-min.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %link{:href=>'screen.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+  %body
+    .l-content
+      .pure-g-r
+        .pure-u-1
+          %h1 #{@@coin}
+      .pure-g-r
+        .pure-u-1-4
+          %h2 #{@@blocks.first.difficulty.to_f.round(3)}
+          %small Current difficulty
+        .pure-u-1-4
+          %h2 #{@@next_diff}
+          %small Estimate next difficulty (change in #{@@next_retarget} blocks)
+        .pure-u-1-4
+          %h2 #{@@blocks.size}
+          %small Blocks in chain
+        .pure-u-1-4
+          %h2 #{@@block_reward}
+          %small Block reward (change in #{@@next_reward} blocks)
+      .pure-g-r
+        .pure-u-1-2
+          .pure-u-1
+            %h3 Network difficulty
+            %img{:src => "diff.png", :alt => "difficulty graph"}
+          .pure-u-1
+            %h3 Mined coins
+            %img{:src => "mined.png", :alt => "mined coins"}
+        .pure-u-1-2
+          %h3 Latest blocks
+          - @@blocks.limit(18).each do |b|
+            %p
+              %a.pure-button.pure-button{href: "http://blocks.2chcoin.in/block/#{b.blockhash}"} #{b.height}
+              &nbsp;
+              #{Time.at(b.time.to_i)}
+      .pure-g-r
+        .pure-u-1
+          %img{:src => "git.png", :alt => "git repo"}
+          
+    

@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: coininfo
+      hosts:
+        - localhost:27017
