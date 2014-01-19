@@ -78,7 +78,7 @@ scheduler.every update_interval do
     
     blocks.reverse.each do |b|
       diff.push(b.difficulty.to_f)
-      date.push(Time.at(b.time.to_i))
+      date.push(Time.at(b.time.to_i).utc)
     end
     
     p = Rdata.new

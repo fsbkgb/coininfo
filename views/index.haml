@@ -40,7 +40,7 @@
             %p
               %a.pure-button.pure-button{href: "http://blocks.2chcoin.in/block/#{b.blockhash}"} #{b.height}
               &nbsp;
-              #{Time.at(b.time.to_i)}
+              #{Time.at(b.time.to_i).utc}
       .pure-g-r
         .pure-u-1
           %a{:href => "https://github.com/fsbkgb/coininfo"}
